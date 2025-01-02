@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-username/EAAWAS-Prototype.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'docker build -t eaawas-app .'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo "Running Tests (To be added later)"'
+            }
+        }
+        stage('Push') {
+            steps {
+                sh 'docker tag eaawas-app your-dockerhub-username/eaawas-app:v1'
+                sh 'docker push your-dockerhub-username/eaawas-app:v1'
+            }
+        }
+    }
+}
