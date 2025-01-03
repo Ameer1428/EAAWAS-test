@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/EAAWAS-Prototype.git'
+                git 'https://github.com/Ameer1428/EAAWAS-test.git'
             }
         }
         stage('Build') {
